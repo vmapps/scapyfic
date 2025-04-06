@@ -70,7 +70,7 @@ Usage: scapy-traceroute.py <target>
 
 ```
 
-How script is running :
+What is script doing :
 
 - get `target` from command line with `sys.argv`
 - resolve name to IP address with `socket.gethostbyname()`
