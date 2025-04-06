@@ -71,6 +71,15 @@ $ python3 scapy-dns2ip.py www.fmac.com
 www.fmac.com address is ['3.33.251.168', '15.197.225.128']
 ```
 
+What is script doing :
+
+- get `target` from command line with `sys.argv`
+- create layer from `scapy.IP()` and set resolver address using `dst`
+- create layer from `scapy.UDP()` and set destination port using `dport`
+- create layer from `scapy.DNS()` and `scapy.DNQR()` to set query using `qname` and `qtype`
+- forge packet from layers previously created with `scapy.sr1()`
+- return `an.rdata` array of results from `scapy.DNS()` entries
+
 ## Scapy IP2DNS
 
 Sample script to resolve IP address into DNS name.
@@ -82,6 +91,16 @@ Usage: scapy-ip2dns.py <ipaddr>
 $ python3 scapy-ip2dns.py 2.20.10.35
 2.20.10.35 name is a2-20-10-35.deploy.static.akamaitechnologies.com
 ```
+
+What is script doing :
+
+- get `target` from command line with `sys.argv`
+- convert IP address to `in-addr.arpa` format
+- create layer from `scapy.IP()` and set resolver address using `dst`
+- create layer from `scapy.UDP()` and set destination port using `dport`
+- create layer from `scapy.DNS()` and `scapy.DNQR()` to set query using `qname` and `qtype`
+- forge packet from layers previously created with `scapy.sr1()`
+- return `an.rdata` result from `scapy.DNS()` entry
 
 ## Scapy Traceroute
 
