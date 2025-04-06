@@ -64,10 +64,8 @@ packets = scapy.sniff(
 Sample script to trace IP route to a target.
 
 ```
-
 python3 scapy-traceroute.py
 Usage: scapy-traceroute.py <target>
-
 ```
 
 What is script doing :
@@ -82,7 +80,3 @@ What is script doing :
   - if no packet returned, display timeout message
   - else print source of `ICMP`packet received
   - if packet received from `target`, then break the loop
-
-```
-
-```
