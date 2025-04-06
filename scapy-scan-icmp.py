@@ -12,7 +12,7 @@ logging.getLogger("scapy.runtime").setLevel(logging.ERROR)
 def scan(target):
 
     packet = scapy.IP(dst=target)/scapy.ICMP()
-    answer, noanswer = scapy.sr(packet, timeout=0.50, verbose=False)
+    answer, noanswer = scapy.sr(packet, timeout=1, verbose=False)
     
     for item in answer:
         # item = (sent packet, received packet)

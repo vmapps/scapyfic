@@ -144,7 +144,7 @@ What is script doing :
 - get `target` from command line with `sys.argv`
 - create packet with layer `scapy.ICMP()` under `scapy.IP()`
 - set `dst` for `scapy.IP()`
-- send one `IP()/ICMP()` packet with `scapy.sr1()`
+- send one `IP()/ICMP()` packet with `scapy.sr()`
 - display packets being type of `echo-reply` from answers received
 
 ## Scapy Scan TCP SYN
@@ -170,5 +170,27 @@ What is script doing :
 - create packet with layer `scapy.ICMP()` under `scapy.TCP()`
 - set `dst` for `scapy.IP()`
 - set `dport` and `flags` for `scapy.TCP()`
-- send one `IP()/TCP()` packet with `scapy.sr1()`
+- send one `IP()/TCP()` packet with `scapy.sr()`
 - display packets having proto set to `tcp` from answers received
+
+## Scapy Scan ARP
+
+Sample script to scan IP target (or range) with ARP.
+
+```
+$ python3 scapy-scan-arp.py
+Usage: scapy-scan-arp.py <target|range>
+
+$ python3 scapy-scan-arp.py 192.168.0.119
+scan 192.168.0.119 with ARP
+ARP reply from 192.168.0.119 (80:16:12:c5:b2:2c)
+```
+
+What is script doing :
+
+- get `target` from command line with `sys.argv`
+- create packet with layer `scapy.Ether()` under `scapy.ARP()`
+- set `dst` for `scapy.Ether()` to use broadcast address
+- set `pdst` for `scapy.ARP()`
+- send one `Ether()/ARP()` packet with `scapy.srp()`
+- display packets `src` and `hwsrc` from answers received

@@ -11,13 +11,12 @@ logging.getLogger("scapy.runtime").setLevel(logging.ERROR)
 # --------------------------------------------------
 def scan(target):
 
-    packet = scapy.IP(dst=target)/scapy.TCP(dport=1,flags='S')
-    answer, noanswer = scapy.sr(packet, timeout=1, verbose=False)
+    packet = scapy.Ether(dst='ff:ff:ff:ff:ff:ff')/scapy.ARP(pdst=target)
+    answer, noanswer = scapy.srp(packet, timeout=1, verbose=False)
     
     for item in answer:
         # item = (sent packet, received packet)
-        if item[1].proto == 6:
-            print( f'TCP SYN reply from {item[1].src}' )
+        print( f'ARP reply from {item[1].psrc} ({item[1].hwsrc})' )
 
 # --------------------------------------------------
 # MAIN
@@ -26,7 +25,7 @@ if __name__ == '__main__':
 
     if len(sys.argv)==2:
         target = sys.argv[1]
-        print(f'scan {target} with TCP SYN')
+        print(f'scan {target} with ARP')
         scan(target)
     else:
         print(f'Usage: {sys.argv[0]} <target|range>')
