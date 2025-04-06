@@ -135,6 +135,40 @@ Usage: scapy-scan-icmp.py <target|range>
 $ python3 scapy-scan-icmp.py 192.168.1.0/24
 scan 192.168.1.0/24 with ICMP
 ICMP echo-reply from 192.168.1.1
-ICMP echo-reply from 192.168.1.11
-ICMP echo-reply from 192.168.1.12
+ICMP echo-reply from 192.168.1.51
+ICMP echo-reply from 192.168.1.52
 ```
+
+What is script doing :
+
+- get `target` from command line with `sys.argv`
+- create packet with layer `scapy.ICMP()` under `scapy.IP()`
+- set `dst` for `scapy.IP()`
+- send one `IP()/ICMP()` packet with `scapy.sr1()`
+- display packets being type of `echo-reply` from answers received
+
+## Scapy Scan TCP SYN
+
+Sample script to scan IP target (or range) with TCP SYN flag.
+
+```
+$ python3 scapy-scan-tcpsyn.py
+Usage: scapy-scan-tcpsyn.py <target|range>
+
+$ python3 scapy-scan-tcpsyn.py 192.168.0.0/24
+scan 192.168.0.0/24 with TCP SYN
+TCP SYN reply from 192.168.0.1
+TCP SYN reply from 192.168.0.92
+TCP SYN reply from 192.168.0.118
+TCP SYN reply from 192.168.0.161
+TCP SYN reply from 192.168.0.203
+```
+
+What is script doing :
+
+- get `target` from command line with `sys.argv`
+- create packet with layer `scapy.ICMP()` under `scapy.TCP()`
+- set `dst` for `scapy.IP()`
+- set `dport` and `flags` for `scapy.TCP()`
+- send one `IP()/TCP()` packet with `scapy.sr1()`
+- display packets having proto set to `tcp` from answers received
