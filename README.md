@@ -1,6 +1,14 @@
 # scapyfic
 
-Various tools based on Scapy
+Various tips and tricks on Scapy
+
+- [Scapy Awesome](#scapy-awesome)
+- [Scapy DNS2IP](#scapy-dns2ip)
+- [Scapy IP2DNS](#scapy-ip2dns)
+- [Scapy Scan ARP](#scapy-scan-arp)
+- [Scapy Scan ICMP](#scapy-scan-icmp)
+- [Scapy Scan TCP SYN](#scapy-scan-tcp-syn)
+- [Scapy Traceroute](#scapy-traceroute)
 
 ## Scapy Awesome
 
@@ -102,27 +110,27 @@ What is script doing :
 - forge packet from layers previously created with `scapy.sr1()`
 - return `an.rdata` result from `scapy.DNS()` entry
 
-## Scapy Traceroute
+## Scapy Scan ARP
 
-Sample script to trace IP route to a target.
+Sample script to scan IP target (or range) with ARP.
 
 ```
-$ python3 scapy-traceroute.py
-Usage: scapy-traceroute.py <target>
+$ python3 scapy-scan-arp.py
+Usage: scapy-scan-arp.py <target|range>
+
+$ python3 scapy-scan-arp.py 192.168.0.119
+scan 192.168.0.119 with ARP
+ARP reply from 192.168.0.119 (80:16:12:c5:b2:2c)
 ```
 
 What is script doing :
 
 - get `target` from command line with `sys.argv`
-- resolve name to IP address with `socket.gethostbyname()`
-- enter loop to send packets with `ttl=1`until `target` reached or `ttl=maxttl`
-  - create packet with layer `scapy.ICMP()` under `scapy.IP()`
-  - set `dst`and `ttl`values for `scapy.IP()`
-  - set `type` value for `scapy.ICMP()`
-  - send one `IP()/ICMP()` packet with `scapy.sr1()`
-  - if no packet returned, display timeout message
-  - else print source of `ICMP`packet received
-  - if packet received from `target`, then break the loop
+- create packet with layer `scapy.Ether()` under `scapy.ARP()`
+- set `dst` for `scapy.Ether()` to use broadcast address
+- set `pdst` for `scapy.ARP()`
+- send one `Ether()/ARP()` packet with `scapy.srp()`
+- display packets `src` and `hwsrc` from answers received
 
 ## Scapy Scan ICMP
 
@@ -173,24 +181,24 @@ What is script doing :
 - send one `IP()/TCP()` packet with `scapy.sr()`
 - display packets having proto set to `tcp` from answers received
 
-## Scapy Scan ARP
+## Scapy Traceroute
 
-Sample script to scan IP target (or range) with ARP.
+Sample script to trace IP route to a target.
 
 ```
-$ python3 scapy-scan-arp.py
-Usage: scapy-scan-arp.py <target|range>
-
-$ python3 scapy-scan-arp.py 192.168.0.119
-scan 192.168.0.119 with ARP
-ARP reply from 192.168.0.119 (80:16:12:c5:b2:2c)
+$ python3 scapy-traceroute.py
+Usage: scapy-traceroute.py <target>
 ```
 
 What is script doing :
 
 - get `target` from command line with `sys.argv`
-- create packet with layer `scapy.Ether()` under `scapy.ARP()`
-- set `dst` for `scapy.Ether()` to use broadcast address
-- set `pdst` for `scapy.ARP()`
-- send one `Ether()/ARP()` packet with `scapy.srp()`
-- display packets `src` and `hwsrc` from answers received
+- resolve name to IP address with `socket.gethostbyname()`
+- enter loop to send packets with `ttl=1`until `target` reached or `ttl=maxttl`
+  - create packet with layer `scapy.ICMP()` under `scapy.IP()`
+  - set `dst`and `ttl`values for `scapy.IP()`
+  - set `type` value for `scapy.ICMP()`
+  - send one `IP()/ICMP()` packet with `scapy.sr1()`
+  - if no packet returned, display timeout message
+  - else print source of `ICMP`packet received
+  - if packet received from `target`, then break the loop
