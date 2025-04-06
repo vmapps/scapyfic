@@ -59,12 +59,36 @@ packets = scapy.sniff(
     )
 ```
 
+## Scapy DNS2IP
+
+Sample script to resolve DNS name into IP addresses.
+
+```
+$ python3 scapy-dns2ip.py
+Usage: scapy-dns2ip.py <host>
+
+$ python3 scapy-dns2ip.py www.fmac.com
+www.fmac.com address is ['3.33.251.168', '15.197.225.128']
+```
+
+## Scapy IP2DNS
+
+Sample script to resolve IP address into DNS name.
+
+```
+$ python3 scapy-ip2dns.py
+Usage: scapy-ip2dns.py <ipaddr>
+
+$ python3 scapy-ip2dns.py 2.20.10.35
+2.20.10.35 name is a2-20-10-35.deploy.static.akamaitechnologies.com
+```
+
 ## Scapy Traceroute
 
 Sample script to trace IP route to a target.
 
 ```
-python3 scapy-traceroute.py
+$ python3 scapy-traceroute.py
 Usage: scapy-traceroute.py <target>
 ```
 
