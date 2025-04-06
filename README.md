@@ -43,7 +43,7 @@ packets = scapy.sniff(
     lfilter=lambda p:p.haslayer(scapy.DNS)
     )
 
-# DNS Queries
+# Sniff traffic filtering on DNS Queries
 packets = scapy.sniff(
     count=0,
     iface='en0',
