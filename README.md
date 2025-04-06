@@ -123,3 +123,18 @@ What is script doing :
   - if no packet returned, display timeout message
   - else print source of `ICMP`packet received
   - if packet received from `target`, then break the loop
+
+## Scapy Scan ICMP
+
+Sample script to scan IP target (or range) with ICMP.
+
+```
+$ python3 scapy-scan-icmp.py
+Usage: scapy-scan-icmp.py <target|range>
+
+$ python3 scapy-scan-icmp.py 192.168.1.0/24
+scan 192.168.1.0/24 with ICMP
+ICMP echo-reply from 192.168.1.1
+ICMP echo-reply from 192.168.1.11
+ICMP echo-reply from 192.168.1.12
+```

@@ -18,9 +18,9 @@ def dns2ip(host,resolver):
     try:
         answer = scapy.sr1(layer_ip/layer_udp/layer_dns, verbose=0)
         ips=[]
-        for a in answer[scapy.DNS].an:
-            if not isinstance(a.rdata,bytes):
-                ips.append(a.rdata)
+        for item in answer[scapy.DNS].an:
+            if not isinstance(item.rdata,bytes):
+                ips.append(item.rdata)
         return ips
     except:
         return None
