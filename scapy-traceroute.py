@@ -22,10 +22,12 @@ def trace(dst,maxttl=30):
         packet = scapy.IP(dst=dst,ttl=ttl)/scapy.ICMP(type='echo-request')
         answer = scapy.sr1(packet,timeout=2,verbose=False)
 
+        # answer = (sent packet, received packet)
         if answer:
             # Destination reached
             answer.host = resolve(answer.src)
-            print(f'[ttl={ttl:<2}] reply type {answer.type} from {answer.src} ({answer.host})')
+            rtt = (answer.time - packet.sent_time) * 1000
+            print(f'[ttl={ttl:<2}] reply type {answer.type} from {answer.host} ({answer.src}) - {rtt:.2f} ms')
             if answer.src == dst:
                 break
         else:

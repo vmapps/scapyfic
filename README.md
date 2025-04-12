@@ -191,15 +191,15 @@ Usage: scapy-traceroute.py <target>
 
 $ python3 scapy-traceroute.py www.cisco.com
 traceroute to 2.20.10.35 (www.cisco.com)
-[ttl=1 ] reply type 11 from 192.168.0.1 (192.168.0.1)
-[ttl=2 ] reply type 11 from 192.168.1.1 (192.168.1.1)
+[ttl=1 ] reply type 11 from 192.168.0.1 (192.168.0.1) - 5.00 ms
+[ttl=2 ] reply type 11 from 192.168.1.1 (192.168.1.1) - 1.92 ms
 [ttl=3 ] timed out
 [ttl=4 ] timed out
 [ttl=5 ] timed out
 [ttl=6 ] timed out
-[ttl=7 ] reply type 11 from 193.251.131.8 (193.251.131.8)
-[ttl=8 ] reply type 11 from 81.52.187.80 (81.52.187.80)
-[ttl=9 ] reply type 0 from 2.20.10.35 (a2-20-10-35.deploy.static.akamaitechnologies.com)
+[ttl=7 ] reply type 11 from 193.251.131.8 (193.251.131.8) - 158.98 ms
+[ttl=8 ] reply type 11 from 81.52.187.80 (81.52.187.80) - 13.46 ms
+[ttl=9 ] reply type 0 from a2-20-10-35.deploy.static.akamaitechnologies.com (2.20.10.35) - 15.20 ms
 ```
 
 What is script doing :
