@@ -86,6 +86,8 @@ packets = scapy.sniff(
     )
 ```
 
+Note: more tips and tricks in document "[Network packet manipulation with Scapy](http://scapy.net/talks/scapy_hack.lu.pdf)" (Philippe BIONDI, 2015)
+
 ## Scapy DNS2IP
 
 Sample script to resolve DNS name into IP addresses.
