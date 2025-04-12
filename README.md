@@ -15,6 +15,25 @@ Various tips and tricks on Scapy
 Some helpful scapy commands.
 
 ```
+$ scapy
+
+>>> # List layers
+>>> ls()
+
+>>> # List IP layer default values
+>>> ls(IP)
+
+>>> # List commands
+>>> lsc()
+
+>>> # Help with sr1 function
+>>> help(sr1)
+
+>>> # Quit
+>>> quit()
+```
+
+```
 import scapy.all as scapy
 
 # Scapy documentation
