@@ -8,6 +8,7 @@ Various tips and tricks on Scapy
 - [Scapy Scan ARP](#scapy-scan-arp)
 - [Scapy Scan ICMP](#scapy-scan-icmp)
 - [Scapy Scan TCP SYN](#scapy-scan-tcp-syn)
+- [Scapy Sniff ARP](#scapy-sniff-arp)
 - [Scapy Sniff DNS](#scapy-sniff-dns)
 - [Scapy Sniff WEB](#scapy-sniff-web)
 - [Scapy Sniff WIFI](#scapy-sniff-wifi)
@@ -204,6 +205,18 @@ What is script doing :
 - set `dport` and `flags` for `scapy.TCP()`
 - send one `IP()/TCP()` packet with `scapy.sr()`
 - display packets having proto set to `tcp` from answers received
+
+## Scapy Sniff ARP
+
+Sample script to sniff ARP requests and replies.
+
+```
+$ python3 scapy-sniff-arp.py
+[*] ARP request from 192.168.0.1 about 192.168.0.12
+[*] ARP reply from 192.168.0.12 (46:c8:54:4e:6c:14)
+[*] ARP request from 192.168.0.1 about 192.168.0.19
+[*] ARP reply from 192.168.0.19 (85:85:80:22:1f:20)
+```
 
 ## Scapy Sniff DNS
 
