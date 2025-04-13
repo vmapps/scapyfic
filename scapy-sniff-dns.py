@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 
 import scapy.all as scapy
-import socket
-import sys
 
 # --------------------------------------------------
 # VARIABLES

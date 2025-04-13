@@ -2,7 +2,6 @@
 
 import scapy.all as scapy
 import socket
-import sys
 
 # --------------------------------------------------
 # VARIABLES
