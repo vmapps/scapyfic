@@ -34,6 +34,7 @@ def display(p):
 # --------------------------------------------------
 if __name__ == '__main__':
 
+    # filter on packets with TCP layer on destination port tcp/80 or tcp/443 
     filter = lambda p: p.haslayer(scapy.TCP) and (p[scapy.TCP].dport==80 or p[scapy.TCP].dport==443)
 
     scapy.sniff(count=0,prn=display,lfilter=filter)

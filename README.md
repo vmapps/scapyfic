@@ -9,7 +9,8 @@ Various tips and tricks on Scapy
 - [Scapy Scan ICMP](#scapy-scan-icmp)
 - [Scapy Scan TCP SYN](#scapy-scan-tcp-syn)
 - [Scapy Sniff DNS](#scapy-sniff-dns)
-- [Scapy Scan WEB](#scapy-sniff-web)
+- [Scapy Sniff WEB](#scapy-sniff-web)
+- [Scapy Sniff WIFI](#scapy-sniff-wifi)
 - [Scapy Traceroute](#scapy-traceroute)
 
 ## Scapy Awesome
@@ -230,6 +231,18 @@ $ python3 scapy-sniff-web.py
 [*] HTTP/S request on tcp/443 to a2-20-10-35.deploy.static.akamaitechnologies.com (2.20.10.35)
 [*] HTTP/S request on tcp/443 to server-52-84-90-49.lhr62.r.cloudfront.net (52.84.90.49)
 [*] HTTP/S request on tcp/443 to ip-72-163-15-141.cisco.com (72.163.15.141)
+```
+
+## Scapy Sniff WIFI
+
+Sample script to sniff WIFI broadcasts.
+
+```
+$ python3 scapy-sniff-wifi.py
+[*] WIFI broadcast from request for SSID_2G (a0:ae:77:05:c6:42)
+[*] WIFI broadcast from request for SSID_5G (13:fa:45:f1:80:66)
+[*] WIFI broadcast from request for SSID_2G (a0:ae:77:05:c6:42)
+[*] WIFI broadcast from request for SSID_5G (13:fa:45:f1:80:66)
 ```
 
 ## Scapy Traceroute
