@@ -30,6 +30,7 @@ def display(p):
 if __name__ == '__main__':
 
     scapy.conf.use_pcap=True
+    scapy.conf.sniff_promisc=False
 
     # filter on packets with DOT11 layer with Beacons (type=0 and subtype=8) 
     # filter = lambda p: p.haslayer(scapy.Dot11)
