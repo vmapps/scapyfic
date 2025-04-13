@@ -224,12 +224,12 @@ Sample script to sniff DNS requests.
 
 ```
 $ python3 scapy-sniff-dns.py
-[*] DNS request for ogads-pa.clients6.google.com
-[*] DNS request for www.youtube.com
-[*] DNS request for fonts.googleapis.com
-[*] DNS request for accounts.google.com
-[*] DNS request for youtube.com
-[*] DNS request for www.gstatic.com
+[*] DNS request to 1.1.1.1 for ogads-pa.clients6.google.com
+[*] DNS request to 1.1.1.1 for www.youtube.com
+[*] DNS request to 1.1.1.1 for fonts.googleapis.com
+[*] DNS request to 1.1.1.1 for accounts.google.com
+[*] DNS request to 1.1.1.1 for youtube.com
+[*] DNS request to 1.1.1.1 for www.gstatic.com
 ```
 
 ## Scapy Sniff WEB
@@ -252,10 +252,10 @@ Sample script to sniff WIFI broadcasts.
 
 ```
 $ python3 scapy-sniff-wifi.py
-[*] WIFI broadcast from request for SSID_2G (a0:ae:77:05:c6:42)
-[*] WIFI broadcast from request for SSID_5G (13:fa:45:f1:80:66)
-[*] WIFI broadcast from request for SSID_2G (a0:ae:77:05:c6:42)
-[*] WIFI broadcast from request for SSID_5G (13:fa:45:f1:80:66)
+[*] WIFI broadcast from Gateway (a0:ae:77:05:c6:42)
+[*] WIFI broadcast from AccessP_5G (13:fa:45:f1:80:66)
+[*] WIFI broadcast from Gateway (a0:ae:77:05:c6:42)
+[*] WIFI broadcast from AccessP_5G (13:fa:45:f1:80:66)
 ```
 
 ## Scapy Traceroute

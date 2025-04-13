@@ -18,7 +18,7 @@ def display(p):
 
     if( req != dname):
         dname = req
-        print(f'[*] DNS request for {dname}')
+        print(f'[*] DNS request to {p[scapy.IP].dst} for {dname}')
 
 # --------------------------------------------------
 # MAIN
