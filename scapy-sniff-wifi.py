@@ -24,7 +24,7 @@ def display(p):
     if( req != dinfo):
         dinfo = req
         daddr = p.addr2
-        print(f'[*] WIFI broadcast from request for {dinfo} ({daddr})')
+        print(f'[*] WIFI broadcast from {dinfo} ({daddr})')
 
 # --------------------------------------------------
 # MAIN
