@@ -8,6 +8,8 @@ Various tips and tricks on Scapy
 - [Scapy Scan ARP](#scapy-scan-arp)
 - [Scapy Scan ICMP](#scapy-scan-icmp)
 - [Scapy Scan TCP SYN](#scapy-scan-tcp-syn)
+- [Scapy Sniff DNS](#scapy-sniff-dns)
+- [Scapy Scan WEB](#scapy-sniff-web)
 - [Scapy Traceroute](#scapy-traceroute)
 
 ## Scapy Awesome
@@ -201,6 +203,34 @@ What is script doing :
 - set `dport` and `flags` for `scapy.TCP()`
 - send one `IP()/TCP()` packet with `scapy.sr()`
 - display packets having proto set to `tcp` from answers received
+
+## Scapy Sniff DNS
+
+Sample script to sniff DNS requests.
+
+```
+$ python3 scapy-sniff-dns.py
+[*] DNS request for ogads-pa.clients6.google.com
+[*] DNS request for www.youtube.com
+[*] DNS request for fonts.googleapis.com
+[*] DNS request for accounts.google.com
+[*] DNS request for youtube.com
+[*] DNS request for www.gstatic.com
+```
+
+## Scapy Sniff WEB
+
+Sample script to sniff request to HTTP and HTTPS hosts.
+
+```
+$ python3 scapy-sniff-web.py
+[*] HTTP/S request on tcp/443 to 172.64.155.119 (172.64.155.119)
+[*] HTTP/S request on tcp/443 to 104.18.87.42 (104.18.87.42)
+[*] HTTP/S request on tcp/443 to server-52-84-90-49.lhr62.r.cloudfront.net (52.84.90.49)
+[*] HTTP/S request on tcp/443 to a2-20-10-35.deploy.static.akamaitechnologies.com (2.20.10.35)
+[*] HTTP/S request on tcp/443 to server-52-84-90-49.lhr62.r.cloudfront.net (52.84.90.49)
+[*] HTTP/S request on tcp/443 to ip-72-163-15-141.cisco.com (72.163.15.141)
+```
 
 ## Scapy Traceroute
 
