@@ -1,6 +1,6 @@
 # scapyfic
 
-Various tips and tricks on Scapy
+Collection of various Python scripts using Scapy library to scan networks, sniff traffic or traceroute packets :
 
 - [Scapy Awesome](#scapy-awesome)
 - [Scapy DNS2IP](#scapy-dns2ip)
@@ -227,9 +227,9 @@ $ python3 scapy-sniff-dns.py
 [*] DNS request to 1.1.1.1 for ogads-pa.clients6.google.com
 [*] DNS request to 1.1.1.1 for www.youtube.com
 [*] DNS request to 1.1.1.1 for fonts.googleapis.com
-[*] DNS request to 1.1.1.1 for accounts.google.com
-[*] DNS request to 1.1.1.1 for youtube.com
-[*] DNS request to 1.1.1.1 for www.gstatic.com
+[*] DNS request to 1.0.0.1 for news.google.com
+[*] DNS request to 1.0.0.1 for accounts.google.com
+[*] DNS request to 1.0.0.1 for www.gstatic.com
 ```
 
 ## Scapy Sniff WEB
